@@ -113,6 +113,7 @@ private
         def record_too_large?(dataStr, mdsdSource)
             if dataStr.length > @configured_max_record_size
                 @log.warn "Dropping too large record to mdsd with size=#{dataStr.length}, source='#{mdsdSource}"
+                @log.warn "Dropping too large record to mdsd with data=#{dataStr}, source='#{mdsdSource}"
                 true
             else
                 false
